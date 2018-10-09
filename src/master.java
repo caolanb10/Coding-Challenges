@@ -1,6 +1,4 @@
-import java.util.*;
-
-public class master {
+public class Master {
 
 	public static void main(String[] args) {
 		Sorter s = new Sorter();
