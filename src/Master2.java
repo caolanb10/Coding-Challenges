@@ -4,19 +4,58 @@ public class Master2 {
 	
 	public static void main(String[] args)
 	{
-		char[][] a = new char[args.length][];
-		for(int i = 0; i < args.length; i++)
+		String[] strings = {"hello world", "mastercard", "Top programmer", "HadlLfEWjFJ"};
+		char[][] a = new char[strings.length][];
+		for(int i = 0; i < strings.length; i++)
 		{
-			a[i] = args[i].toCharArray();
+			a[i] = strings[i].toCharArray();
+		}
+		
+		String[] revStrings = new String[strings.length];
+		String[] revStringsR = new String[strings.length];
+		
+		for(int i = 0; i < strings.length; i++)
+		{
+			revStrings[i] = stringReverser(a[i]);
+			System.out.println(revStrings[i]);
+		}
+		
+		for(int i = 0; i < strings.length; i++)
+		{
+			revStringsR[i] = recursiveReverse(a[i]);
+			System.out.println(revStringsR[i]);
 		}
 	}
 	
 	public static String stringReverser(char[] rev)
 	{
-		int iterator = rev[0];
-		for(int i = 0; i < rev.length; i++)
+		if(rev.length<=1) return new String(rev);
+		int len = rev.length;
+		if(len<=1) return null;
+		char iterator;
+		char[] reverseString = new char[len];
+		for(int i = 0; i < len; i++)
 		{
-			
+			iterator = rev[i];
+			reverseString[len-1 - i] = iterator;
 		}
+		return new String(reverseString);
+	}
+	
+	public static String recursiveReverse(char[] reverser)
+	{
+		int len = reverser.length;
+		if(len<=1) return new String(reverser);
+		char[] empty = new char[len];
+		return new String(recur(reverser, empty, len));
+	}
+	
+	public static char[] recur(char[] str, char[] theString, int pos)
+	{
+		System.out.println(Arrays.toString(theString));
+		if(pos == 0) return theString;
+		pos--;
+		theString[(theString.length-1) - pos] = str[pos];
+		return recur(str, theString, pos);
 	}
 }
