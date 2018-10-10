@@ -11,15 +11,18 @@ public class Master2 {
 			a[i] = strings[i].toCharArray();
 		}
 		
+		//Arrays for storing reversed strings
 		String[] revStrings = new String[strings.length];
 		String[] revStringsR = new String[strings.length];
 		
+		//Iterative
 		for(int i = 0; i < strings.length; i++)
 		{
 			revStrings[i] = stringReverser(a[i]);
 			System.out.println(revStrings[i]);
 		}
 		
+		//Recursive
 		for(int i = 0; i < strings.length; i++)
 		{
 			revStringsR[i] = recursiveReverse(a[i]);
@@ -27,6 +30,7 @@ public class Master2 {
 		}
 	}
 	
+	//Iterative implementation
 	public static String stringReverser(char[] rev)
 	{
 		if(rev.length<=1) return new String(rev);
@@ -42,6 +46,7 @@ public class Master2 {
 		return new String(reverseString);
 	}
 	
+	//Recursive implementation
 	public static String recursiveReverse(char[] reverser)
 	{
 		int len = reverser.length;

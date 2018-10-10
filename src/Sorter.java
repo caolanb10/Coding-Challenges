@@ -1,6 +1,8 @@
 //Implementation of Quicksort
 
 public class Sorter {
+	
+	//Partition
 	public int partition(int arr[], int low, int high) {
 		int pivot = arr[high];
 		int i = (low - 1);

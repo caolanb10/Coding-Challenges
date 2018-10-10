@@ -2,6 +2,8 @@ public class Master {
 
 	public static void main(String[] args) {
 		Sorter s = new Sorter();
+		
+		//Arbitrary array
 		int testArray[] = { 1, 3, 6, 4, 3, 1, 6, 9, 0, 2, 1, 65, 3, 1, 1, 6, 8, 6 };
 		s.sort(testArray, 0, testArray.length - 1);
 
